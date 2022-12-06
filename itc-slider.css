@@ -1,0 +1,219 @@
+/*!
+* ItcSlider
+*   site: https://itchief.ru/javascript/slider
+*   github: https://github.com/itchief/ui-components
+*
+* Copyright 2018-2022 Alexander Maltsev
+* Licensed under MIT (https://github.com/itchief/ui-components/blob/master/LICENSE)
+*/
+html {
+  font-size: 10px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  margin-top: 7.3rem;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__container {
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  /* overflow: hidden; */
+}
+
+.slider__items{
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  margin-bottom: 10rem;
+}
+
+.slider_disable-transition {
+  transition: none;
+}
+
+.slider__item {
+  flex: 0 0 25%;
+  max-width: 25%;
+  user-select: none;
+  will-change: transform;
+}
+
+.logos_slider {
+  flex: 0 0 100%;
+  max-width: 100%;
+  user-select: none;
+  will-change: transform;
+  margin-right: 0;
+}
+
+
+/* кнопки влево и вправо */
+
+.slider__control {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  background: rgb(0 0 0 / 20%);
+  border: none;
+  transform: translateY(-210%);
+  cursor: pointer;
+}
+
+.slider__control_hide {
+  display: none;
+}
+
+.slider__control[data-slide="prev"] {
+  left: 0;
+}
+
+.slider__control[data-slide="next"] {
+  right: 0;
+}
+
+.slider__control:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #c0301c;
+  outline: 0;
+}
+
+.slider__control::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.slider__control[data-slide="prev"]::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control[data-slide="next"]::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* индикаторы */
+
+.slider__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  margin: 0 15%;
+  padding-left: 0;
+  list-style: none;
+
+}
+
+.slider__indicators li {
+  flex: 0 1 auto;
+  box-sizing: content-box;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  margin-right: 7px;
+  margin-left: 7px;
+  text-indent: -999px;
+  background-color: #dddddd;
+  background-clip: padding-box;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+  margin-top: -70px;
+}
+
+.slider__indicators li.active {
+  background-color: #c0301c;
+}
+
+.slider__item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__item-content:last-child {
+  margin-right: 0;
+}
+
+.h3_on_slider__item-content {
+  margin-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.p_on_slider__item-content {
+  margin-top: 1.5rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+}
+
+.shadow_img_on_slider__item-content {
+  position: relative;
+}
+
+.shadow_img_on_slider__item-content:hover .hover_on_img_slider {
+  cursor: pointer;
+  z-index: 1;
+}
+
+.img_on_slider__item-content {
+  width: 263px;
+  height: 250px;
+  z-index: 1;
+}
+
+.hover_on_img_slider {
+  background: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  width: 263px;
+  height: 250px;
+  margin-top: -254px;
+  z-index: -1;
+}
+
+.all_icons_slider {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 19.7rem;
+}
+
+.icons_slider {
+
+  color: #fff;
+  margin-right: 1px;
+  padding: 6px;
+
+}
+
+.icons_slider:last-child {
+  margin-right: 0;
+}
+
+.icons_slider:hover {
+  background-color: #c0301c
+}
